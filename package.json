@@ -1,0 +1,14 @@
+{
+  "name": "raylib-live",
+  "private": true,
+  "version": "0.0.0",
+  "description": "live-reloading raylib project template",
+  "scripts": {
+    "build:native": "cmake -B build && cmake --build build",
+    "build:web": "emcmake -B wbuild && emcmake --build wbuild",
+    "start": ""
+  },
+  "keywords": [],
+  "author": "David Konsumer <konsumer@jetboystudio.com>",
+  "license": "MIT"
+}
