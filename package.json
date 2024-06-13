@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "description": "live-reloading raylib project template",
   "scripts": {
-    "build:native": "cmake -B build && cmake --build build",
-    "build:web": "emcmake cmake -B wbuild -DPLATFORM=Web && emmake make -C wbuild",
+    "build:native": "cmake -G Ninja -B build && cmake --build build",
+    "build:web": "emcmake cmake -G Ninja -B wbuild -DPLATFORM=Web && cmake --build wbuild",
     "build:web:reload": "nodemon -w ./src -e c,cpp -x 'npm run 'build:web",
     "dev:web": "live-server wbuild --entry-file=my_raylib_game.html",
     "build:site": "npm run build:web && mkdir -p dist && mv wbuild/my_raylib_game.* dist && mv dist/my_raylib_game.html dist/index.html",
