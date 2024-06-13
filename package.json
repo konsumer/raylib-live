@@ -6,7 +6,9 @@
   "scripts": {
     "build:native": "cmake -B build && cmake --build build",
     "build:web": "emcmake cmake -B wbuild && emmake make -C wbuild",
-    "start": ""
+    "build:web:reload": "npx -y nodemon -w ./src -e c,cpp -x 'npm run 'build:web",
+    "dev:web": "npx -y live-server wbuild --entry-file=my_raylib_game.html",
+    "start": "npm run build:web && npx -y npm-run-all -p build:web:reload dev:web"
   },
   "keywords": [],
   "author": "David Konsumer <konsumer@jetboystudio.com>",
