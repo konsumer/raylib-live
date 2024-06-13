@@ -25,7 +25,9 @@ set(PROJECT_INCLUDE "${CMAKE_CURRENT_LIST_DIR}/sources/") # Define PROJECT_INCLU
 if (EMSCRIPTEN)
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY")
   set(CMAKE_EXECUTABLE_SUFFIX ".html")
-  add_definitions(-DPLATFORM=Web)
+  
+  # I don;t think this is working right, need to do -DPLATFORM=Web in cmake
+  set(PLATFORM "Web")
 endif ()
 
 # Declaring our executable
