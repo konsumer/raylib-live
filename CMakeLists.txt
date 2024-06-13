@@ -10,9 +10,10 @@ set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # don't build the supplied example g
 
 FetchContent_Declare(
     raylib
-    GIT_REPOSITORY "https://github.com/raysan5/raylib.git"
-    GIT_TAG "master"
-    GIT_PROGRESS TRUE
+    # GIT_REPOSITORY "https://github.com/raysan5/raylib.git"
+    # GIT_TAG "master"
+    # GIT_PROGRESS TRUE
+    URL https://github.com/raysan5/raylib/archive/refs/tags/4.5.0.tar.gz
 )
 
 FetchContent_MakeAvailable(raylib)
@@ -23,10 +24,11 @@ set(PROJECT_INCLUDE "${CMAKE_CURRENT_LIST_DIR}/sources/") # Define PROJECT_INCLU
 
 # build for web
 if (EMSCRIPTEN)
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -sUSE_GLFW=3  -sASYNCIFY --shell-file=${CMAKE_CURRENT_SOURCE_DIR}/src/index.html")
+  set(CMAKE_LINK_FLAGS "${CMAKE_LINK_FLAGS} -sASSERTIONS=1 -sWASM=1")
   set(CMAKE_EXECUTABLE_SUFFIX ".html")
   
-  # I don;t think this is working right, need to do -DPLATFORM=Web in cmake
+  # I don't think this is working right, need to do -DPLATFORM=Web in cmake
   set(PLATFORM "Web")
 endif ()
 

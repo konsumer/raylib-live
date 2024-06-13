@@ -6,9 +6,8 @@
   "scripts": {
     "build:native": "cmake -G Ninja -B build && cmake --build build",
     "build:web": "emcmake cmake -G Ninja -B wbuild -DPLATFORM=Web && cmake --build wbuild",
-    "build:web:reload": "nodemon -w ./src -e c,cpp -x 'npm run 'build:web",
+    "build:web:reload": "nodemon -w ./src -e c,cpp,html -x \"npm run build:web\"",
     "dev:web": "live-server wbuild --entry-file=my_raylib_game.html",
-    "build:site": "npm run build:web && mkdir -p dist && mv wbuild/my_raylib_game.* dist && mv dist/my_raylib_game.html dist/index.html",
     "start": "npm run build:web && run-p build:web:reload dev:web",
     "start:docker": "docker run -it --rm -p 8080:8080 --mount type=bind,src=.,dst=/src emscripten/emsdk ./docker-dev.sh"
   },
