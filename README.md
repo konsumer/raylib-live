@@ -1,4 +1,4 @@
-The purpose of this is to have a live-reloading C-based raylib setup, so you can work on your scene and see changes right away. You will need emscritpen, ninja/cmake/cnodejs installed, or docker.
+The purpose of this is to have a live-reloading C-based raylib setup, so you can work on your scene and see changes right away. You will need emscritpen/ninja/cmake/nodejs installed, or docker.
 
 It also has Github CI setup to auto-publish a demo site for quick-sharing of your project. [Here](https://konsumer.js.org/raylib-live) is an example.
 
