@@ -35,6 +35,10 @@ int main(void)
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
+    // load an image from filesystem
+    Image konsumer = LoadImage("src/assets/konsumer.png");
+    Texture2D texture = LoadTextureFromImage(konsumer);
+
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
@@ -51,8 +55,8 @@ int main(void)
         BeginDrawing();
 
             ClearBackground(RAYWHITE);
-
-            DrawText("Congrats! You created your first window!", 180, 200, 20, LIGHTGRAY);
+            DrawTexture(texture, screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, WHITE);
+            DrawText("Congrats! You created your first window!", 180, 200, 20, BLACK);
 
         EndDrawing();
         //----------------------------------------------------------------------------------

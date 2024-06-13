@@ -24,7 +24,8 @@ set(PROJECT_INCLUDE "${CMAKE_CURRENT_LIST_DIR}/sources/") # Define PROJECT_INCLU
 
 # build for web
 if (EMSCRIPTEN)
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -sUSE_GLFW=3  -sASYNCIFY --shell-file=${CMAKE_CURRENT_SOURCE_DIR}/src/index.html")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -sUSE_GLFW=3  -sASYNCIFY --preload-file=${CMAKE_CURRENT_SOURCE_DIR}/src/assets/@src/assets/")
+  # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -sUSE_GLFW=3  -sASYNCIFY --shell-file=${CMAKE_CURRENT_SOURCE_DIR}/src/index.html --preload-file=${CMAKE_CURRENT_SOURCE_DIR}/src/assets")
   set(CMAKE_LINK_FLAGS "${CMAKE_LINK_FLAGS} -sASSERTIONS=1 -sWASM=1")
   set(CMAKE_EXECUTABLE_SUFFIX ".html")
   
