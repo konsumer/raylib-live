@@ -8,6 +8,7 @@
     "build:web": "emcmake cmake -B wbuild && emmake make -C wbuild",
     "build:web:reload": "npx -y nodemon -w ./src -e c,cpp -x 'npm run 'build:web",
     "dev:web": "npx -y live-server wbuild --entry-file=my_raylib_game.html",
+    "build:site": "npm run build:web && mkdir -p dist && mv wbuild/my_raylib_game.* dist && mv dist/my_raylib_game.html dist/index.html",
     "start": "npm run build:web && npx -y npm-run-all -p build:web:reload dev:web"
   },
   "keywords": [],

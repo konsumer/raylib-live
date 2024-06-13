@@ -2,3 +2,4 @@
 build
 wbuild
 node_modules
+dist
