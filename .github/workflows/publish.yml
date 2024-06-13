@@ -23,6 +23,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: 'npm'
+      - name: Setup Emscripten
+        uses: lovasoa/setup-emscripten@master
       - name: Build Site
         run: npm run build:site
       - name: Upload artifact
