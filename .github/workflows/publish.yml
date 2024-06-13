@@ -24,7 +24,7 @@ jobs:
         with:
           cache: 'npm'
       - name: Setup Emscripten
-        uses: lovasoa/setup-emscripten@master
+        uses: mymindstorm/setup-emsdk@v14
       - name: Build Site
         run: npm run build:site
       - name: Upload artifact
