@@ -9,7 +9,8 @@
     "build:web:reload": "nodemon -w ./src -e c,cpp -x 'npm run 'build:web",
     "dev:web": "live-server wbuild --entry-file=my_raylib_game.html",
     "build:site": "npm run build:web && mkdir -p dist && mv wbuild/my_raylib_game.* dist && mv dist/my_raylib_game.html dist/index.html",
-    "start": "npm run build:web && run-p build:web:reload dev:web"
+    "start": "npm run build:web && run-p build:web:reload dev:web",
+    "start:docker": "docker run -it --rm --mount type=bind,src=.,dst=/src emscripten/emsdk ./docker-dev.sh"
   },
   "keywords": [],
   "author": "David Konsumer <konsumer@jetboystudio.com>",
