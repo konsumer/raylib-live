@@ -5,7 +5,7 @@
   "description": "live-reloading raylib project template",
   "scripts": {
     "build:native": "cmake -B build && cmake --build build",
-    "build:web": "emcmake -B wbuild && emcmake --build wbuild",
+    "build:web": "emcmake cmake -B wbuild && emmake make -C wbuild",
     "start": ""
   },
   "keywords": [],
