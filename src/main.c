@@ -1,71 +1,33 @@
-/*******************************************************************************************
-*
-*   raylib [core] example - Basic window
-*
-*   Welcome to raylib!
-*
-*   To test examples, just press F6 and execute raylib_compile_execute script
-*   Note that compiled executable is placed in the same folder as .c file
-*
-*   You can find all basic examples on C:\raylib\raylib\examples folder or
-*   raylib official webpage: www.raylib.com
-*
-*   Enjoy using raylib. :)
-*
-*   Example originally created with raylib 1.0, last time updated with raylib 1.0
-*
-*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,
-*   BSD-like license that allows static linking with closed source software
-*
-*   Copyright (c) 2013-2024 Ramon Santamaria (@raysan5)
-*
-********************************************************************************************/
-
 #include "raylib.h"
 
-//------------------------------------------------------------------------------------
-// Program main entry point
-//------------------------------------------------------------------------------------
-int main(void)
-{
-    // Initialization
-    //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+#define SCREEN_WIDTH (800)
+#define SCREEN_HEIGHT (450)
 
-    InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
+#define WINDOW_TITLE "Window title"
 
-    // load an image from filesystem
-    Image konsumer = LoadImage("src/assets/konsumer.png");
-    Texture2D texture = LoadTextureFromImage(konsumer);
+int main(void) {
+  InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
+  SetTargetFPS(60);
 
-    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
-    //--------------------------------------------------------------------------------------
+  Texture2D texture = LoadTexture("src/assets/test.png");
 
-    // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
-    {
-        // Update
-        //----------------------------------------------------------------------------------
-        // TODO: Update your variables here
-        //----------------------------------------------------------------------------------
+  while (!WindowShouldClose()) {
+    BeginDrawing();
 
-        // Draw
-        //----------------------------------------------------------------------------------
-        BeginDrawing();
+    ClearBackground(RAYWHITE);
 
-            ClearBackground(RAYWHITE);
-            DrawTexture(texture, screenWidth/2 - texture.width/2, screenHeight/2 - texture.height/2 - 40, WHITE);
-            DrawText("Congrats! You created your first window!", 180, 200, 20, BLACK);
+    const int texture_x = SCREEN_WIDTH / 2 - texture.width / 2;
+    const int texture_y = SCREEN_HEIGHT / 2 - texture.height / 2;
+    DrawTexture(texture, texture_x, texture_y, WHITE);
 
-        EndDrawing();
-        //----------------------------------------------------------------------------------
-    }
+    const char* text = "OMG! IT WORKS!";
+    const Vector2 text_size = MeasureTextEx(GetFontDefault(), text, 20, 1);
+    DrawText(text, SCREEN_WIDTH / 2 - text_size.x / 2, texture_y + texture.height + text_size.y + 10, 20, BLACK);
 
-    // De-Initialization
-    //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
-    //--------------------------------------------------------------------------------------
+    EndDrawing();
+  }
 
-    return 0;
+  CloseWindow();
+
+  return 0;
 }

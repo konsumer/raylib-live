@@ -18,3 +18,5 @@ npm run build:native
 # compile web-version
 npm run build:web
 ```
+
+Put any files in `src/assets` and access them in your code with that path (like `src/assets/image.png`) and it will work in native or wasm -build.
