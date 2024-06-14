@@ -3,7 +3,7 @@ The purpose of this is to have a live-reloading C-based raylib setup, so you can
 It also has Github CI setup to auto-publish a demo site for quick-sharing of your project. [Here](https://konsumer.js.org/raylib-live) is an example.
 
 ```
-# setuip tools
+# setup tools
 npm i
 
 # run the watching web-server, build on changes
