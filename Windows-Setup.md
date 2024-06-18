@@ -63,7 +63,7 @@ Clone the repo the same way you did with emsdk: https://github.com/konsumer/rayl
 Then you'll probably want to start with ```npm i``` to do some final setting up.\
 Then ```npm run build:web``` which may install a few more files. And finally ```npm start```\
 You also have ```npm run build:native``` for an executable.
-A project with a basic C file will be set up and published for you to start playing with.
+You'll find a basic example - ```main.c``` in the src folder, which will be compiled and the output displayed in your browser.
 
 ----
 ### * PATH variables
