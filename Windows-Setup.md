@@ -61,9 +61,9 @@ If not, go here: https://cmake.org/download/ and select the correct installer fr
 Now hopefully everything will be in place for this to work.\
 Clone the repo the same way you did with emsdk: https://github.com/konsumer/raylib-live \
 Then in the console navigate to the directory and do ```npm run build:web``` to continue with the installation.\
-Then you'll probably want to start with ```npm i``` to do some final setting up.\
-And finally ```npm start```\
-You also have ```npm run build:native``` for an executable.\
+Then you'll probably want to do ```npm i``` for some final setting up.\
+And to get it running: ```npm start```\
+(You also have ```npm run build:native``` for an executable.)\
 You'll find a basic example - ```main.c``` in the src folder, which will be compiled and the output displayed in your browser.
 
 ----
