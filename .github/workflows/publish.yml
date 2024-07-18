@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
       - name: Setup Emscripten
         uses: mymindstorm/setup-emsdk@v14
-      - name: Setup Nionja
+      - name: Setup Ninja
         run: sudo apt update && sudo apt install -y ninja-build
       - name: Build Site
         run: npm run build:web
