@@ -13,7 +13,7 @@ FetchContent_Declare(
     # GIT_REPOSITORY "https://github.com/raysan5/raylib.git"
     # GIT_TAG "master"
     # GIT_PROGRESS TRUE
-    URL https://github.com/raysan5/raylib/archive/refs/tags/4.5.0.tar.gz
+    URL https://github.com/raysan5/raylib/archive/refs/tags/5.0.tar.gz
 )
 
 FetchContent_MakeAvailable(raylib)
