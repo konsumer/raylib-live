@@ -12,7 +12,7 @@ npm start
 # run the build/server in docker (less host-tooling needed)
 npm run start:docker
 
-# make a native game
+# make a native game, run with ./build/my_raylib_game
 npm run build:native
 
 # compile web-version
