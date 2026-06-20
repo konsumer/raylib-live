@@ -18,6 +18,15 @@
             color: white;
             background: black;
         }
+        #canvas-container {
+            aspect-ratio: 800 / 450;
+            width: min(100vw, 100vh * 800 / 450);
+            height: min(100vh, 100vw * 450 / 800);
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
         #console {
             overflow: auto;
         }
@@ -25,7 +34,9 @@
 </head>
 
 <body>
-    <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <div id="canvas-container">
+      <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    </div>
     <!-- <pre id="console"></pre> -->
     <script type='text/javascript'>
         window.Module = {

@@ -1,5 +1,27 @@
 # Setting up Raylib-Live on Windows
-This has been tested on Windows 11, but should be the same for Windows 10\
+
+This has been tested on Windows 11, but should be the same for Windows 10.
+
+```sh
+git clone https://github.com/konsumer/raylib-live.git
+cd raylib-live
+
+# setup tools
+npm i
+
+# run the watching web-server, build on changes
+npm start
+
+# make a native game, run with ./build/my_raylib_game
+npm run build:native
+
+# compile web-version
+npm run build:web
+```
+
+
+## complete install for all dependant tools
+
 It looks like a lot of steps, and most of these components may already exist on your system, though it's best to be sure and check each one.
 (Unless you're using the Docker version, then you just need Docker)
 
@@ -46,12 +68,6 @@ You very likely have one of these already installed with Raylib, and you will ne
 See if GCC is available by entering ```gcc -v``` at the command line.\
 If it's not, go to https://winlibs.com/ scroll down to releases and pick the first 64 or 32 bit zip or 7z.\
 Unpack it to a directory, and make sure you have a PATH* set to the bin folder
-
-## Ninja
-This is one you're less likely to have.\
-Try ```ninja --version``` at the command line.\
-If you don't have it, go here: https://ninja-build.org/ and click on the download link and select a windows installer.\
-You will need to make sure the ninja.exe is unpacked to a suitable place and that you have a PATH variable* pointing to it.
 
 ## CMake
 You'll likely know if you have Cmake installed and are already using it.\

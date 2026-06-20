@@ -25,12 +25,8 @@ jobs:
           cache: 'npm'
       - name: Setup Emscripten
         uses: mymindstorm/setup-emsdk@v14
-      - name: Setup Ninja
-        run: sudo apt update && sudo apt install -y ninja-build
       - name: Build Site
-        run: npm run build:web
-      - name: Build Site
-        run: mkdir -p dist && mv wbuild/*.data wbuild/*.js dist/ && mv wbuild/*.html dist/index.html
+        run: npm run build:web && mkdir -p dist && mv wbuild/*.data wbuild/*.js dist/ && mv wbuild/*.html dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

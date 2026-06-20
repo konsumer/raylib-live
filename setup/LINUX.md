@@ -8,7 +8,7 @@ This has been tested on Ubuntu Jammy, and will differ for other distros, but the
 sudo apt update
 
 # install tools you will need
-sudo apt install -y emscripten cmake ninja-build git npm
+sudo apt install -y emscripten cmake git npm
 ```
 
 Ubuntu generally uses older versions of things, in apt, so you might want to install fresh ones, especially these:
@@ -21,6 +21,16 @@ Now, go to [this repo](https://github.com/konsumer/raylib-live), and click the "
 ```sh
 git clone https://github.com/konsumer/raylib-live.git
 cd raylib-live
+
+# setup tools
 npm i
+
+# run the watching web-server, build on changes
 npm start
+
+# make a native game, run with ./build/my_raylib_game
+npm run build:native
+
+# compile web-version
+npm run build:web
 ```
