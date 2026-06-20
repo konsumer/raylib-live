@@ -20,13 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          cache: 'npm'
+          node-version: 'lts/*'
       - name: Setup Emscripten
         uses: mymindstorm/setup-emsdk@v14
       - name: Build Site
-        run: npm run build:web && mkdir -p dist && mv wbuild/*.data wbuild/*.js dist/ && mv wbuild/*.html dist/index.html
+        run: npm run build:web && mkdir -p dist && cp wbuild/*.data wbuild/*.js wbuild/*.wasm dist/ && cp wbuild/*.html dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
